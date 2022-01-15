@@ -1,0 +1,316 @@
+/** @format */
+
+.logoArea {
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mainLogo {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('/Assets/Images/fire.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .brandName {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+}
+
+.onboardingProgress {
+  ul.progressContainer {
+    padding: 0px;
+
+    li {
+      width: 3em;
+      height: 3em;
+      text-align: center;
+      line-height: 3em;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #f1f3f8;
+      margin: 0 1.5em;
+      display: inline-block;
+      color: #667187;
+      position: relative;
+
+      &.active {
+        background: #664de5;
+        animation: progress 1s;
+        border: 1px solid #664de5;
+        color: #fff;
+
+        &::after,
+        &::before {
+          background: #664de5;
+          animation: progress 1s;
+        }
+      }
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      top: 1.5em;
+      left: -1.6em;
+      width: 1.6em;
+      height: 0.2em;
+      background: #f1f3f8;
+      z-index: -1;
+    }
+
+    li::after {
+      content: '';
+      position: absolute;
+      top: 1.5em;
+      right: -1.6em;
+      width: 1.6em;
+      height: 0.2em;
+      background: #f1f3f8;
+      z-index: -1;
+    }
+
+    li:first-child::before {
+      display: none;
+    }
+
+    li:last-child::after {
+      display: none;
+    }
+  }
+}
+
+@keyframes progress {
+  0% {
+    clip-path: circle(0%);
+  }
+
+  100% {
+    clip-path: circle(100%);
+  }
+}
+
+.subpageArea {
+  color: #687082;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+
+  .show {
+    animation: progress 0.7s;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .title {
+    color: #151b28;
+    text-align: center;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 700;
+    margin: 3em 0px 0.5em 0px;
+  }
+
+  .subTitle {
+    color: #969daf;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+
+    span {
+      color: #969daf;
+    }
+  }
+
+  .textInput {
+    width: 100%;
+    line-height: 24px;
+    border: 1px solid #ebeff5;
+    border-radius: 5px;
+    padding: 15px;
+    color: #687082;
+
+    &:active,
+    &:focus,
+    &:focus-visible {
+      border: 1px solid #969daf;
+      outline: none;
+    }
+  }
+
+  .workspaceUrlContainer {
+    .urlPlaceholder {
+      display: inline-block;
+      width: 40%;
+      padding: 15px 15px;
+      background-color: #f8f9fc;
+      border: 1px solid #ebeff5;
+      border-right: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .textInputUrl {
+      width: 60%;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      padding: 13px;
+
+      &:active,
+      &:focus,
+      &:focus-visible {
+        border: 1px solid #ebeff5;
+        outline: none;
+      }
+    }
+  }
+
+  .optionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .optionArea {
+      width: 45%;
+      border: 1px solid #ebeff5;
+      border-radius: 8px;
+      text-align: left;
+      padding: 25px;
+
+      &.active {
+        animation: progress 0.2s;
+        border: 1px solid #664de5;
+
+        .optionIcon {
+          [class^='fa'] {
+            color: #664de5;
+          }
+        }
+      }
+
+      .optionIcon {
+        [class^='fa'] {
+          color: #262f42;
+          font-size: 24px;
+        }
+      }
+
+      .optionTitle {
+        color: #262f42;
+        font-weight: 700;
+      }
+
+      .optionText {
+        width: 85%;
+        color: #9e9ea7;
+      }
+    }
+  }
+}
+
+.checkmark {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 15% auto;
+  box-shadow: inset 0px 0px 0px #664de5;
+  animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #664de5;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 60px #664de5;
+  }
+}
+
+//For Small Screen Optimizations
+@media (max-width: 767px) {
+  .onboardingProgress {
+    ul.progressContainer {
+      li {
+        margin: 0 1.2em;
+      }
+
+      li::before {
+        left: -1.3em;
+        width: 1.3em;
+      }
+
+      li::after {
+        right: -1.3em;
+        width: 1.3em;
+      }
+    }
+  }
+
+  .checkmark {
+    margin: 30% auto;
+  }
+
+  .subpageArea {
+    .workspaceUrlContainer {
+      .urlPlaceholder {
+        padding: 15px 5px;
+      }
+    }
+
+    .optionContainer {
+      .optionArea {
+        width: 48%;
+      }
+    }
+  }
+}
