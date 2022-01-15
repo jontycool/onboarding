@@ -1,7 +1,6 @@
 /** @format */
 
 import './App.scss';
-import FormInput from './Components/FormInput';
 import Onboarding from './Pages/Onboarding';
 
 function App() {

@@ -8,7 +8,7 @@ function CustomButton(props) {
   const [variant] = useState(props.variant);
 
   return (
-    <button className={`btn-${variant} btn-${size}`} onClick={() => props.onClick()}>
+    <button className={`btn-${variant} btn-${size} mb-3`} onClick={() => props.onClick()}>
       {props.children}
     </button>
   );
